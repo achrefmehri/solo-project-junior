@@ -36,7 +36,11 @@ const addTable = (newTable) => {
     const sql = 'DELETE FROM drinks WHERE id = ?'
     return connection.query(sql,id)
   }
+  const updateDrink = (newUpd,DrinkId)=>{
+    const sql = `UPDATE drinks SET ? WHERE id=?`
+    return connection.query(sql,[newUpd,DrinkId])
+  }
 
 module.exports = {
-  selectAllTables,addTable,selectAllDrinks,addDrink,deleteDrink
+  selectAllTables,addTable,selectAllDrinks,addDrink,deleteDrink,updateDrink
 };
