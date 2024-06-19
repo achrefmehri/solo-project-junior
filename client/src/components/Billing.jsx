@@ -1,13 +1,16 @@
 import React from "react";
 import moment from "moment/moment";
 
-const Billing = () => {
+const Billing = (props) => {
+
+
   return (
     <div className="billing">
       <div className="billing-header">
         <h3>INVOICE</h3>
         <hr></hr>
         <span>Invoice number: #</span>
+        <span >Table number: # {props.selectedTable}</span>
         <span>{moment().format("MMMM Do YYYY, h:mm:ss a")}</span>
       </div>
       <hr></hr>
@@ -26,15 +29,22 @@ const Billing = () => {
       </div>
         
         <div className="billing-items">
+          {props.billItems.map((elem,i)=>{
+            return (
+
+           <div className="billing-items-disp" key={i} >
           <div className="billing-item-quantity">
-            <span>QNT</span>
+            <span></span>
           </div>
           <div className="billing-item-description">
-            <span>DESCRIPTION</span>
+            <span>{elem.name}</span>
           </div>
           <div className="billing-item-price">
-            <span>PRICE</span>
+            <span>{elem.price}</span>
           </div>
+          </div>
+            )
+          })}
           
         </div>
      

@@ -4,7 +4,7 @@
     max-height: 479px;
 }
 /* hole app styling*/
-.app-container{
+.main-view{
     display: flex;
 }
 
@@ -198,10 +198,22 @@ padding: .3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    flex-direction: column;
+    gap: .4rem;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     margin-top: .1rem;
+}
+.billing-items-disp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    gap: 4rem;
+}
+.billing-item-quantity{
+    margin-left:10px ;
 }
 .checkout-btn{
     background-color: #6a31c0;
@@ -223,3 +235,91 @@ color: #fff;
     margin-top: 5rem;
     margin-left: 9rem;
 }
+.view-change{ 
+margin-top: -23rem;
+margin-left: 10rem;
+max-width: 450px;
+}
+.tables-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.table-number{
+    background-color: #6a31c0;
+    padding: 1.2rem;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.table-number:hover{
+    background-color: #131029;
+    
+}
+.tabs-tit{
+display: flex;
+margin-left: 10.7rem;
+padding: 1.8rem;
+font-family: Arial, Helvetica, sans-serif;
+color: #131029;
+}
+.drinks-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+.drink-item{
+    background-color: #6a31c0;
+    padding: 1rem;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    border-radius: 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.drink-item:hover{
+    background-color: #131029;
+    
+}
+.drinks-tit{
+display: flex;
+margin-left: 11.7rem;
+padding: 1.8rem;
+font-family: Arial, Helvetica, sans-serif;
+color: #131029;
+}
+.select-category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 3.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.category-choose{
+    display: flex;
+    margin-top: 2rem;
+    gap: 4rem;
+}
+.category-choose span{
+   background-color: #6a31c0;
+   padding: 1rem;
+   color: #fff;
+   font-family: Arial, Helvetica, sans-serif;
+   border-radius: 8px;
+   cursor: pointer;
+
+}
+.category-choose span:hover{
+    background-color:#131029;
+ 
+ }
