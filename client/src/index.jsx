@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-
+import SideBar from './components/SideBar.jsx'
+import NavBar from './components/NavBar.jsx'
+import Billing from './components/Billing.jsx'
 
 const App = () => {
-  const [items, setItems] = useState([])
   
  
 
   return (
-    <div>
-      <h1>Item List</h1>
-      <List items={items} />
+    <div className='app-container'>
+      <SideBar/>
+      <NavBar/>
+      <Billing/>
     </div>
   )
 }
