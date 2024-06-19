@@ -51,6 +51,14 @@ const updateDrink =(id, newUpdt)=>{
     })
     .catch((err) => err);
 }
+
+//addTable 
+const addtables =(newtables)=>{
+  axios.post("http://localhost:3000/api/tables",newtables)
+  .then(()=>setRefetech(!refetech))
+  .catch((err)=>err)
+}
+
  // Status of Tables
 const reservedTab =()=>{
    setReserverdTables([...reserverdTables,selectedTable]) 
@@ -68,7 +76,7 @@ const changeView=()=>{
     return <Drinks drinks={drinks} selectedDrink={setSelectedDrink} billingItems={billItems}/>
   }
   else if( view === 'settings'){
-    return <Settings addDrink={addDrink} deleteDrink={deleteDrink} updateDrink={updateDrink} view={setView} drinks={drinks}/>
+    return <Settings addDrink={addDrink} deleteDrink={deleteDrink} addtable={addtables} updateDrink={updateDrink} view={setView} drinks={drinks}/>
   }
 }
   return (

@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import AddDrink from './AddDrink.jsx'
 import DeleteDrink from "./DeleteDrink.jsx";
 import UpdateDrink from "./UpdateDrink.jsx";
+import AddTable from './AddTable.jsx'
 const Settings = (props) => {
     const [viewDisp,setViewDips]=useState('')
 if(viewDisp===''){
@@ -22,7 +23,7 @@ if(viewDisp===''){
             </div>
             <div className="tables-setting">
               <div className="add-table">
-                <span>Add Table</span>
+                <span onClick={()=>setViewDips('add-table')}>Add Table</span>
               </div>
             </div>
           </div>
@@ -38,6 +39,9 @@ if(viewDisp===''){
     else if(viewDisp==='update-drink'){
         return <UpdateDrink drinks={props.drinks} updateDrink={props.updateDrink} view={props.view}/>
     } 
+    else if(viewDisp==='add-table'){
+      return <AddTable addtable={props.addtable} view={props.view}/>
+  } 
      
             
         

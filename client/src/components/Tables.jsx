@@ -9,7 +9,7 @@ const Tables = (props) => {
       {props.tables.map((elem) => {
           return (
           <div key={elem.id} className="table-number" onClick={()=>{props.selectedTable(elem.tableNum),props.reservedTable()}}>
-            <span>Table:</span>
+            <span>Table </span>
             <span>{elem.tableNum}</span>
           </div>
         );
