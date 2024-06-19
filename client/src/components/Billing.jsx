@@ -2,8 +2,7 @@ import React from "react";
 import moment from "moment/moment";
 
 const Billing = (props) => {
-
-
+const billingItems = [...new Set (props.billItems)]
   return (
     <div className="billing">
       <div className="billing-header">

@@ -17,7 +17,7 @@ const SideBar = (props) => {
         <FiCoffee size={24} />
           <span className="drinks-span">Drinks</span>
         </div>
-        <div className="settings">
+        <div className="settings" onClick={()=>props.view('settings')}>
         <MdOutlineSettings size={24} />
           <span className="settings-span">Settings</span>
         </div>

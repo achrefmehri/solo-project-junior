@@ -323,3 +323,123 @@ color: #131029;
     background-color:#131029;
  
  }
+ .settings-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap:2rem;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ .crud-sett{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+ }
+.drinks-setting{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.add-drink{
+    padding: 1rem;
+    background-color: #6a31c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.update-drink{
+    padding: 1rem;
+    background-color: #6a31c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.delete-drink{
+    padding: 1rem;
+    background-color: #6a31c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.tables-setting{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.add-table{
+    padding: 1rem;
+    background-color: #6a31c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.update-table{
+    padding: 1rem;
+    background-color: #6a31c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.delete-table{
+    padding: 1rem;
+    background-color: #6a31c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.add-drink-disp{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    gap: 1rem;
+}
+.add-drink-disp h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.add-drink-disp input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: .5rem;
+    border: none;
+    background-color: #e9e9e9;
+    outline: none;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 14rem;
+}
+.add-drink-disp select{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: .5rem;
+    border: none;
+    background-color: #e9e9e9;
+    outline: none;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 14rem;
+}
+.add-drink-btn{
+   width: 6rem;
+   margin-left: 5rem;
+   margin-top: 1rem;
+   background-color: #6a31c0;
+   border: none;
+   padding:.8rem ;
+   color: #fff;
+   font-family: Arial, Helvetica, sans-serif;
+   border-radius: 10px;
+   cursor: pointer;
+}

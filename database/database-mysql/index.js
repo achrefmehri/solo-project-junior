@@ -21,6 +21,7 @@ const addTable = (newTable) => {
   return connection.query(sql,newTable)
  };
 
+
  // drinks Database 
 
  const selectAllDrinks = () => {
@@ -31,7 +32,11 @@ const addTable = (newTable) => {
    const sql = 'INSERT INTO drinks SET ?'
    return connection.query(sql,newDrink)
   };
+  const deleteDrink =(id)=>{
+    const sql = 'DELETE FROM drinks WHERE id = ?'
+    return connection.query(sql,id)
+  }
 
 module.exports = {
-  selectAllTables,addTable,selectAllDrinks,addDrink
+  selectAllTables,addTable,selectAllDrinks,addDrink,deleteDrink
 };

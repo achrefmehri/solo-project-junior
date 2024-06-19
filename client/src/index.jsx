@@ -6,6 +6,7 @@ import Billing from './components/Billing.jsx'
 import Tables from './components/Tables.jsx'
 import Drinks from './components/Drinks.jsx'
 import axios from 'axios'
+import Settings from './components/Settings.jsx'
 
 
 const App = () => {
@@ -16,31 +17,41 @@ const App = () => {
   const [reserverdTables,setReserverdTables]=useState([])
   const [billingItems,setBillingItems]=useState([])
   const [selectedDrink,setSelectedDrink]=useState([])
-  console.log(selectedTable);
+  const [refetech,setRefetech]=useState(false)
   //import TABLES from DB
   useEffect(()=>{
   axios('http://localhost:3000/api/tables')
   .then((results)=>setTables(results.data))
   .catch((err)=>err)
-  },[])
+  },[!refetech])
 //import DRINKS from db 
 useEffect(()=>{
   axios('http://localhost:3000/api/drinks')
   .then((results)=>setDrinks(results.data))
   .catch((err)=>err)
-  },[])
+  },[!refetech])
+// adding drink
+const addDrink =(newDrink)=>{
+  axios.post("http://localhost:3000/api/drinks",newDrink)
+  .then(()=>setRefetech(!refetech))
+  .catch((err)=>err)
+}
+// delete drink
+const deleteDrink =(id)=>{
+    axios.delete(`http://localhost:3000/api/drinks/${id}`)
+    .then(()=>setRefetech(!refetech))
+    .catch((err)=>err)
+  
+}
+
  // Status of Tables
 const reservedTab =()=>{
-  reserverdTables.forEach((elem)=>{
-    
-    if(tables.length>reserverdTables.length && indexOf(elem)===lastIndexOf(elem)){
-     setReserverdTables([...reserverdTables,selectedTable])
-  }
-  })
+   setReserverdTables([...reserverdTables,selectedTable]) 
 }
 const billItems =()=>{
   setBillingItems([...billingItems,selectedDrink])
 }
+
 
 const changeView=()=>{
   if(view==='tables'){
@@ -48,6 +59,9 @@ const changeView=()=>{
   }
   else if( view === 'drinks'){
     return <Drinks drinks={drinks} selectedDrink={setSelectedDrink} billingItems={billItems}/>
+  }
+  else if( view === 'settings'){
+    return <Settings addDrink={addDrink} deleteDrink={deleteDrink} view={setView}/>
   }
 }
   return (

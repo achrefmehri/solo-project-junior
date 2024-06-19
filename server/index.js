@@ -5,6 +5,7 @@ const {
   addTable,
   selectAllDrinks,
   addDrink,
+  deleteDrink
 } = require("../database/database-mysql");
 
 const app = express();
@@ -48,6 +49,15 @@ app.post("/api/drinks", async function (req, res) {
     res.status(500).send(error);
   }
 });
+app.delete("/api/drinks/:drinkId", async(req,res)=>{
+  try {
+   const deletDrink = await deleteDrink(req.params.drinkId)
+   res.json('deleted succ')
+   
+  } catch (error) {
+   res.status(500).send(error)
+  }
+ })
 
 
 app.listen(PORT, function () {
