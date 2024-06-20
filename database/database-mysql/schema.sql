@@ -37,6 +37,28 @@ CREATE TABLE IF NOT EXISTS `gocoffee`.`drinks` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `gocoffee`.`drinksAndTabs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gocoffee`.`drinksAndTabs` (
+  `drinks_id` INT NOT NULL,
+  `tables_id` INT NOT NULL,
+  PRIMARY KEY (`drinks_id`, `tables_id`),
+  INDEX `fk_drinks_has_tables_tables1_idx` (`tables_id` ASC) VISIBLE,
+  INDEX `fk_drinks_has_tables_drinks_idx` (`drinks_id` ASC) VISIBLE,
+  CONSTRAINT `fk_drinks_has_tables_drinks`
+    FOREIGN KEY (`drinks_id`)
+    REFERENCES `gocoffee`.`drinks` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_drinks_has_tables_tables1`
+    FOREIGN KEY (`tables_id`)
+    REFERENCES `gocoffee`.`tables` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

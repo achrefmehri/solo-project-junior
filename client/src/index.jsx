@@ -7,17 +7,20 @@ import Tables from './components/Tables.jsx'
 import Drinks from './components/Drinks.jsx'
 import axios from 'axios'
 import Settings from './components/Settings.jsx'
+import ReservedTabs from './components/ReservedTabs.jsx'
+import BillingDisp from './components/BillingDisp.jsx'
 
 
 const App = () => {
   const[view,setView]=useState('tables')
   const [tables,setTables]=useState([])
   const [drinks,setDrinks]=useState([])
-  const [selectedTable,setSelectedTable]=useState(0)
+  const [tableId,setTableid]=useState(0)
   const [reserverdTables,setReserverdTables]=useState([])
   const [billingItems,setBillingItems]=useState([])
-  const [selectedDrink,setSelectedDrink]=useState([])
+  const [billings,setBillings]=useState([])
   const [refetech,setRefetech]=useState(false)
+
   //import TABLES from DB
   useEffect(()=>{
   axios('http://localhost:3000/api/tables')
@@ -60,33 +63,43 @@ const addtables =(newtables)=>{
 }
 
  // Status of Tables
-const reservedTab =()=>{
-   setReserverdTables([...reserverdTables,selectedTable]) 
+const reservedTab =(selecTable)=>{
+   setReserverdTables([...reserverdTables,selecTable]) 
 }
-const billItems =()=>{
-  setBillingItems([...billingItems,selectedDrink])
+const billItems =(newDrink)=>{
+  setBillingItems([...billingItems,newDrink])
 }
+// billings 
 
+const billing =(billing)=>{
+  setBillings([...billings,billing]) 
+}
 
 const changeView=()=>{
   if(view==='tables'){
-    return <Tables tables={tables} selectedTable={setSelectedTable} reservedTable={reservedTab}/>
+    return <Tables tables={tables} reservedTable={reservedTab} tableId={setTableid} view={setView}/>
   }
   else if( view === 'drinks'){
-    return <Drinks drinks={drinks} selectedDrink={setSelectedDrink} billingItems={billItems}/>
+    return <Drinks drinks={drinks}  billingItems={billItems}/>
   }
   else if( view === 'settings'){
     return <Settings addDrink={addDrink} deleteDrink={deleteDrink} addtable={addtables} updateDrink={updateDrink} view={setView} drinks={drinks}/>
   }
+  else if( view === 'reservedTab'){
+     return <ReservedTabs reserverdTables={reserverdTables}/>
+  }
+  else if( view === 'billingDisp'){
+    return <BillingDisp billings={billings}/>
+ }
 }
   return (
     <div className='app-container'>
       <div className="main-view">
 
       <SideBar view={setView}/>
-      <NavBar tables={tables} reservedTab={reserverdTables}/>
-      <Billing selectedTable={selectedTable} billItems={billingItems}/>
-      </div>
+      <NavBar tables={tables} reservedTab={reserverdTables}view={setView} />
+      <Billing billItems={billingItems} tableId={tableId} billings={billing} refetech={setBillingItems} tableRefetch ={setTableid}/>
+      </div> 
       <div className="view-change">
 
       {changeView()}

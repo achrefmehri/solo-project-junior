@@ -8,7 +8,7 @@ const Tables = (props) => {
        
       {props.tables.map((elem) => {
           return (
-          <div key={elem.id} className="table-number" onClick={()=>{props.selectedTable(elem.tableNum),props.reservedTable()}}>
+          <div key={elem.id} className="table-number" onClick={()=>{props.tableId(elem.tableNum),props.reservedTable(elem.tableNum),props.view('drinks')}}>
             <span>Table </span>
             <span>{elem.tableNum}</span>
           </div>

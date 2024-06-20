@@ -36,7 +36,7 @@ const Drinks = (props) => {
          
         {coffee.map((elem) => {
             return (
-            <div key={elem.id} className="drink-item" onClick={()=>{props.selectedDrink(elem),props.billingItems(elem)}}>
+            <div key={elem.id} className="drink-item" onClick={()=>{props.billingItems(elem)}}>
               <span>{elem.name}</span>
               <span>{elem.price} TND</span>
             </div>
@@ -62,7 +62,7 @@ const Drinks = (props) => {
          
         {soda.map((elem) => {
             return (
-            <div className="drink-item" key={elem.id} onClick={()=>{props.selectedDrink(elem),props.billingItems(elem)}}>
+            <div className="drink-item" key={elem.id} onClick={()=>{props.billingItems(elem),props.billings()}}>
               <span>{elem.name}</span>
               <span>{elem.price} TND</span>
             </div>

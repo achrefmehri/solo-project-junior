@@ -453,3 +453,20 @@ color: #131029;
     margin-left: 12rem;
     font-family: Arial, Helvetica, sans-serif;  
 }
+.bill-disp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+.bill-details{
+    font-size: 12px;
+    background-color: #6a31c0;
+    color: #fff;
+    padding: .8rem;
+    border-radius: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+}
