@@ -48,7 +48,7 @@ const Billing = (props) => {
 
            <div className="billing-items-disp" key={i} >
           <div className="billing-item-quantity">
-            <span></span>
+            <span>1</span>
           </div>
           <div className="billing-item-description">
             <span>{elem.name}</span>

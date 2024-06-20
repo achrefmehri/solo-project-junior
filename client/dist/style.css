@@ -169,6 +169,7 @@ hr{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: 600;
+    max-width: px;
 }
 .billing-description{
     display: flex;
